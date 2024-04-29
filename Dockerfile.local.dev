@@ -3,15 +3,19 @@ FROM ubuntu:18.04
 RUN apt-get update
 RUN apt-get install -y python3.6 \
     git \
-    nodejs \
+    curl \
     npm \
     python3-pip
+
+RUN curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh
+RUN bash /tmp/nodesource_setup.sh
+RUN apt-get install -y nodejs
 
 RUN pip3 install -U pip setuptools
 
 RUN mkdir /mindlogger-backend
 WORKDIR /mindlogger-backend
-#copy and install requirements early to allow faster rebuilds as these layers will be cached 
+#copy and install requirements early to allow faster rebuilds as these layers will be cached
 COPY ./requirements.txt ./requirements.txt
 RUN pip3 install -r requirements.txt
 

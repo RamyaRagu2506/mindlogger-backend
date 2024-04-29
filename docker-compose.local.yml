@@ -20,7 +20,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.local.dev
-    volumes: 
+    volumes:
       - "./girderformindlogger:/mindlogger-backend/girderformindlogger"
     ports:
       - "8081:8081"

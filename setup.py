@@ -73,7 +73,8 @@ installReqs = [
 	'pytest-cov==2.7.1',
 	'girder_client==3.0.3',
     'pyDH==0.1.6',
-    'ijson>=3.1.4'
+    'ijson>=3.1.4',
+    'azure-storage-blob==12.12.0'
 ]
 
 extrasReqs = {
@@ -105,6 +106,7 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6'
+        'Programming Language :: Python :: 3.7'
     ],
     packages=find_packages(
         exclude=('girderformindlogger.test', 'tests.*', 'tests', '*.plugin_tests.*', '*.plugin_tests')
@@ -126,7 +128,7 @@ setup(
             'mount = girderformindlogger.cli.mount:main',
             'shell = girderformindlogger.cli.shell:main',
             'sftpd = girderformindlogger.cli.sftpd:main',
-            'build = girderformindlogger.cli.build:main'
+            'build = girderformindlogger.cli.build:main',
             're_encrypt = girderformindlogger.cli.re_encrypt:main'
         ]
     }

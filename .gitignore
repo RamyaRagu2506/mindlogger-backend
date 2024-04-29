@@ -30,7 +30,7 @@ __pycache__
 !.elasticbeanstalk/*.global.yml
 
 # Keys
-.env*
+.env
 *.csr
 *.key
 *.pem
